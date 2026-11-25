@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { db, filePath } = require('../src/db');
+const { db, filePath } = require('./db');
 
 const stations = [
   { id: 'EST-01', name: 'Estação Aurora', river: 'Rio Aurora', municipality: 'Vila Aurora' },
