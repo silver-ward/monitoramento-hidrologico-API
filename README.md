@@ -1,6 +1,6 @@
-# Monitoramento Hidrológico
+# Monitoramento Hidrológico (API)
 
-API REST com dados hidrológicos de nível de rio e precipitação pluvial simulados.  
+Banco de dados local e API REST com dados hidrológicos de nível de rio e precipitação pluvial simulados.  
 
 |<img alt="Demonstração mobile" src="./img/demo-mobile.gif" width="350" align="center">|  
 |---|  
