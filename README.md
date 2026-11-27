@@ -42,8 +42,6 @@ https://github.com/silver-ward/monitoramento-hidrologico-API
 
 ### Diagrama de Classes
 
-Para visualizar o diagrama completo, renderize o conteúdo de /diagrams/full_diagram.puml no endereço https://www.plantuml.com/plantuml.  
-
 **Diagrama de arquitetura**  
 |<img alt="Domain-Driven Design Layers Diagram" src="./img/DDD-layers-diagram.svg" width="1024" align="center">|  
 |---|  
@@ -52,7 +50,6 @@ Para visualizar o diagrama completo, renderize o conteúdo de /diagrams/full_dia
 **Diagrama de componentes**  
 |<img alt="Full Back End Diagram" src="./img/full_diagram.svg" width="1024" align="center">|  
 |---|  
-
 
 ## Execução Local
 
@@ -80,18 +77,29 @@ Para executar este projeto localmente, siga os seguintes passos em um terminal d
         npm install
         ```
 
-    4. **Inicie o servidor de desenvolvimento:**
+    4. **Revise as variáveis de ambiente:**  
+
+        O arquivo `.env` criado automaticamente usa porta 3000 e CORS liberado para `http://localhost:5173` por padrão.  
+        Para controlar essas variáveis, copie o conteúdo de `.env.example` como `.env`.
+        ```
+        cp .env.example .env
+        ```
+
+    5. **Preencha o banco de dados com dados simulados pelo arquivo seed.js:**
+        ```
+        npm run seed
+        ```
+
+    6. **Inicie o servidor de desenvolvimento:**
         ```
         npm run dev
         ```
 
-    5. **Abra no navegador o endereço localhost especificado no terminal.**  
+    7. **Teste no navegador os endpoints do localhost especificado no terminal.**  
         Exemplo:  
         ```
-        http://localhost:5173/
+        http://localhost:3000/api/health
         ```
-
-    Para acessar dados de uma API, defina URLs sem proteção CORS no arquivo /src/data/DAOs/configURL.js.  
 
 ## Licença
 
