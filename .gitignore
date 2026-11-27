@@ -1,4 +1,9 @@
 .env
 node_modules/
-data/*.sqlite
-data/*.sqlite-*
+
+# database (generated)
+HydroCogmo.Infra.Data/Databases/
+*.sqlite
+*.sqlite-*
+*.sqlite-wal
+*.sqlite-shm
