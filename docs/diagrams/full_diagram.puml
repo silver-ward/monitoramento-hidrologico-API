@@ -1,0 +1,89 @@
+@startuml Full Diagram
+' Diagrama de componentes da API de monitoramento hidrologico.
+' Escopo: HydroCogmo.API, HydroCogmo.Domain, HydroCogmo.Infra.Data
+
+skinparam componentStyle rectangle
+skinparam wrapWidth 160
+skinparam ArrowColor #555555
+
+title HydroCogmo - Diagrama de Componentes
+
+package "Composition Root" {
+  [server.js\ncomposition root\nwiring + app.listen()] as Server
+}
+
+package "HydroCogmo.API" {
+
+  package "App" {
+    [app.js\ncreateApp()] as app
+    [routes.js\ncreateRoutes()\nhandle()] as Routes
+  }
+
+  package "Controllers" {
+    [MonitoringController\nhealth / listStations\ngetSummary / getSeries] as Controller
+  }
+
+  package "Presenters" {
+    [MonitoringPresenter\ntoStationList / toSummary\ntoSeries / toHealth] as Presenter
+  }
+
+  package "Validators" {
+    [seriesQuery\nparseSeriesQuery()] as Validator
+  }
+
+  package "Errors" {
+    [ApiError] as ApiError
+  }
+
+  package "Middleware" {
+    [errorHandler\nnotFound() / errorHandler()] as ErrorHandler
+  }
+}
+
+package "HydroCogmo.Domain" {
+  package "Entities" {
+    [Station] as Station
+    [Observation] as Observation
+  }
+}
+
+package "HydroCogmo.Infra.Data" {
+  package "Databases" {
+    [db.js\nbetter-sqlite3] as Db
+    [schema.sql] as Schema
+  }
+
+  package "Repositories" {
+    [MonitoringRepository\nlistActiveStationsWithLastObservation\nfindActiveStationById\nfindLatestByMetric / findSeries / ping] as Repository
+  }
+}
+
+' --- Relacoes API ---
+
+Server --> Repository : instancia
+Server --> Presenter : instancia
+Server --> Controller : instancia (repository + presenter)
+Server --> App : createApp() + listen
+App --> Routes : registra em /api
+App --> ErrorHandler : notFound + errorHandler
+Routes --> Controller : encaminha requisições
+Controller --> Repository : consulta dados
+Controller --> Presenter : formata saída
+Controller --> Validator : valida ?metric/?hours
+Controller --> ApiError : lança 404 station_not_found
+Validator --> ApiError : lança 400 invalid_*
+ErrorHandler --> ApiError : instanceof / serializa
+
+' --- Relacoes Infra ---
+
+Repository --> Db : prepared statements
+Db --> Schema : executa na inicializacao
+
+' --- Relacoes Domain (contrato de dados) ---
+
+Presenter ..> Station : consome
+Presenter ..> Observation : consome
+Repository ..> Station : projeta
+Repository ..> Observation : projeta
+
+@enduml
