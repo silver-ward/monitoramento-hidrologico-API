@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 // Composition root: único arquivo que enxerga todas as camadas.
-const { db } = require('./HydroCogmo.Infra.Data/Database/db');
+const { db } = require('./HydroCogmo.Infra.Data/Databases/db');
 const MonitoringRepository = require('./HydroCogmo.Infra.Data/Repositories/MonitoringRepository');
 const MonitoringPresenter = require('./HydroCogmo.API/Presenters/MonitoringPresenter');
 const MonitoringController = require('./HydroCogmo.API/Controllers/MonitoringController');
