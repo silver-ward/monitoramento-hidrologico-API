@@ -2,7 +2,10 @@
 
 API REST com dados hidrológicos de nível de rio e precipitação pluvial simulados.  
 
-Acesse o aplicativo: https://hydrocogmo.vercel.app/  
+|<img alt="Demonstração mobile" src="./img/demo-mobile.gif" width="350" align="center">|  
+|---|  
+
+<br />Acesse o aplicativo: https://hydrocogmo.vercel.app/  
 
 ## Links  
 
@@ -42,10 +45,14 @@ https://github.com/silver-ward/monitoramento-hidrologico-API
 Para visualizar o diagrama completo, renderize o conteúdo de /diagrams/full_diagram.puml no endereço https://www.plantuml.com/plantuml.  
 
 **Diagrama de arquitetura**  
-<img alt="Domain-Driven Design Layers Diagram" src="./img/DDD-layers-diagram.svg" width="1024" align="center">  
+|<img alt="Domain-Driven Design Layers Diagram" src="./img/DDD-layers-diagram.svg" width="1024" align="center">|  
+|---|  
+
 
 **Diagrama de componentes**  
-<img alt="Full Back End Diagram" src="./img/full_diagram.svg" width="1024" align="center">  
+|<img alt="Full Back End Diagram" src="./img/full_diagram.svg" width="1024" align="center">|  
+|---|  
+
 
 ## Execução Local
 
@@ -85,19 +92,6 @@ Para executar este projeto localmente, siga os seguintes passos em um terminal d
         ```
 
     Para acessar dados de uma API, defina URLs sem proteção CORS no arquivo /src/data/DAOs/configURL.js.  
-
-* Testes de interface de usuário  
-    
-    6. **Inicie o servidor de testes Storybook:**  
-        ```
-        npm run storybook
-        ```
-
-    7. **Abra no navegador o endereço localhost especificado no terminal.**  
-        Exemplo:  
-        ```
-        http://127.0.0.1:6006/
-        ```
 
 ## Licença
 
