@@ -1,6 +1,6 @@
 # Monitoramento Hidrológico (API)
 
-Banco de dados local e API REST com dados hidrológicos de nível de rio e precipitação pluvial simulados.  
+API REST em Node.js e Express para consulta de dados de monitoramento hidrológico simulados com banco de dados SQLite local.
 
 |<img alt="Demonstração mobile" src="./img/demo-mobile.gif" width="350" align="center">|  
 |---|  
