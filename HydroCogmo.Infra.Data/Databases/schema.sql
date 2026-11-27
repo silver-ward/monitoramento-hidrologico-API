@@ -44,3 +44,7 @@ CREATE TABLE IF NOT EXISTS "observations" (
 
 CREATE INDEX IF NOT EXISTS idx_observations_observed_at
     ON "observations" ("observed_at");
+CREATE INDEX IF NOT EXISTS idx_observations_station_id
+    ON "observations" ("station_id");
+CREATE INDEX IF NOT EXISTS idx_observations_station_metric_observed
+    ON "observations" ("station_id", "metric", "observed_at");
