@@ -1,89 +1,106 @@
-# Desafio Backend: API de monitoramento
+# Monitoramento Hidrológico
 
-**Guia amigável em PDF:** [DESAFIO_BACKEND_COGMO.pdf](DESAFIO_BACKEND_COGMO.pdf) — leia antes de começar; ele explica a missão, os passos e os termos do desafio.
+API REST com dados hidrológicos de nível de rio e precipitação pluvial simulados.  
 
-**Proponente:** Cogmo Technology  
-**Público:** alunos em formação, nível júnior  
-**Tempo sugerido:** 16 a 24 horas, distribuídas em até 10 dias úteis  
-**Tecnologias de referência:** Node.js, Express e SQLite
+Acesse o aplicativo: https://hydrocogmo.vercel.app/  
 
-## Contexto
+## Links  
 
-A Cogmo Technology propõe a construção do backend de uma pequena página de monitoramento de níveis de rio e chuva. O desafio é inspirado em uma aplicação de acompanhamento hidrológico, com o escopo reduzido para praticar rotas REST, organização de código e banco de dados.
+#### API REST com dados simulados:  
 
-A amostra incluída é sintética. Estações, locais, horários e valores foram criados para o exercício; não são leituras reais e não servem para alertas ou decisões.
+https://monitoramento-hidrologico-api.onrender.com
 
-## O que você vai construir
+| Nome | Método | Endpoint  
+| :---: | :---: | :--- | 
+| Health | GET | api/health |
+| Stations | GET | api/stations |
+| Summary | GET | api/stations/{stationid}/summary |
+| Series | GET | api/stations/{stationid}/series?metric={metric}&hours={timeframe} |
 
-Uma API HTTP que guarda estações e observações em SQLite e oferece os dados que uma tela de monitoramento precisa. O contrato está em [docs/CONTRATO_API.md](docs/CONTRATO_API.md); o banco e os relacionamentos sugeridos estão em [docs/MODELO_DE_DADOS.md](docs/MODELO_DE_DADOS.md).
+#### Repositório front end:  
+https://github.com/silver-ward/monitoramento-hidrologico  
 
-O projeto já tem a estrutura inicial, o schema sugerido, um gerador de amostras sintéticas e um servidor Express com pontos marcados como TODO. Complete o que falta em etapas pequenas. Você pode alterar a organização se mantiver o contrato.
+#### Repositório back end:  
+https://github.com/silver-ward/monitoramento-hidrologico-API
 
-## Tarefas essenciais
+## Desenvolvimento
 
-1. Inicializar SQLite usando o schema e manter chave estrangeira habilitada.
-2. Fazer o seed idempotente: executar mais de uma vez não duplica estações e observações.
-3. Implementar listagem de estações.
-4. Implementar o resumo com a leitura mais recente de nível e chuva.
-5. Implementar série por estação, variável e janela de 1 a 72 horas.
-6. Retornar datas ISO 8601 em UTC, ordenadas da mais antiga para a mais recente.
-7. Tratar estação inexistente, variável desconhecida e janela inválida com HTTP e JSON de erro coerentes.
-8. Preservar lacunas: não inventar nem interpolar leituras que não existem.
-9. Manter consultas parametrizadas e separar rotas das consultas SQL.
+### Tecnologias e bibliotecas utilizadas:  
+* **JavaScript**  
+    Linguagem de programação e estruturação.  
+* **Node.js**  
+    Ambiente de execução para JavaScript.  
+* **Express**  
+    Framework web para Node.js com definição de rotas e tratamento de requisições de API.  
+* **SQLite**  
+    Sistema de gerenciamento de banco de dados relacional.
 
-### Fora do escopo obrigatório
+## Modelagem dos Dados
 
-Login, permissões, previsão por inteligência artificial, conexão a sensores reais, alertas de risco, hospedagem em nuvem, filas, microsserviços e banco distribuído. Não procure nem compartilhe chaves de serviços reais.
+### Diagrama de Classes
 
-## Como começar
+Para visualizar o diagrama completo, renderize o conteúdo de /diagrams/full_diagram.puml no endereço https://www.plantuml.com/plantuml.  
 
-Requisitos: Node.js 20 ou superior e npm.
+**Diagrama de arquitetura**  
+<img alt="Domain-Driven Design Layers Diagram" src="./img/DDD-layers-diagram.svg" width="1024" align="center">  
 
-~~~powershell
-cd back
-Copy-Item .env.example .env
-npm install
-npm run seed
-npm run dev
-~~~
+**Diagrama de componentes**  
+<img alt="Full Back End Diagram" src="./img/full_diagram.svg" width="1024" align="center">  
 
-A API sobe em http://localhost:3000. Confira http://localhost:3000/api/health e a referência de chamadas em [harness/EXEMPLOS.md](harness/EXEMPLOS.md). O roteiro automático de fumaça está em [harness/check.ps1](harness/check.ps1).
+## Execução Local
 
-O banco local fica em back/data/monitoramento.sqlite. A variável DB_PATH permite escolher outro caminho. Não envie o arquivo .env nem dados locais para o repositório.
+Para executar este projeto localmente, siga os seguintes passos em um terminal de comandos:  
+   
+* Integração com este repositório no GitHub  
+    Pré-requisitos: [Git](https://git-scm.com/).  
 
-## Plano sugerido
 
-- **Etapa 1 (3-4 h):** ler o contrato, iniciar o servidor e entender as tabelas.
-- **Etapa 2 (3-5 h):** concluir e repetir o seed; consultar os dados com SQL.
-- **Etapa 3 (5-7 h):** criar as rotas e conferir as respostas com exemplos.
-- **Etapa 4 (3-5 h):** validar erros, unidades, ordenação e datas.
-- **Etapa 5 (2-3 h):** preparar README, breve demonstração e retrospectiva.
+    1. **Clone o repositório:**
+        ```
+        git clone https://github.com/silver-ward/monitoramento-hidrologico.git
+        ```
 
-A etapa seguinte não precisa esperar que tudo seja perfeito. Primeiro faça uma resposta simples correta; depois organize e melhore.
+    2. **Entre no diretório que foi clonado:**
+        ```
+        cd monitoramento-hidrologico
+        ```
 
-## Pronto para a entrega quando
+* Execução do código  
+    Pré-requisitos: [Node.js](https://nodejs.org/).  
 
-- Os comandos de instalação, seed e inicialização funcionam a partir do README.
-- O seed pode ser repetido sem duplicatas.
-- As três rotas entregam o JSON descrito no contrato.
-- A tela consegue obter estações, resumo e série sem depender de uma chave privada.
-- Um leitor consegue entender tabelas, relacionamentos, validações e limitações olhando a documentação.
-- A interface sempre deixa claro que os dados são simulados.
+    3. **Instale as dependências:**
+        ```
+        npm install
+        ```
 
-## O que entregar
+    4. **Inicie o servidor de desenvolvimento:**
+        ```
+        npm run dev
+        ```
 
-1. Repositório ou pasta de código com o README atualizado.
-2. Schema SQL e evidência do seed.
-3. Exemplos de chamadas e respostas para rotas válidas e inválidas.
-4. Um diagrama simples ou descrição das relações do banco.
-5. Apresentação curta: decisão de modelagem, dificuldade encontrada e próxima melhoria.
+    5. **Abra no navegador o endereço localhost especificado no terminal.**  
+        Exemplo:  
+        ```
+        http://localhost:5173/
+        ```
 
-### Critérios de avaliação (100 pontos)
+    Para acessar dados de uma API, defina URLs sem proteção CORS no arquivo /src/data/DAOs/configURL.js.  
 
-- **API e contrato - 30:** endpoints corretos, HTTP e mensagens compreensíveis.
-- **Banco e SQL - 25:** relacionamentos, chaves, integridade, seed repetível e consultas parametrizadas.
-- **Regras de dados - 20:** datas UTC, unidade, ordenação, filtros e lacunas preservadas.
-- **Organização e clareza - 15:** nomes, divisão simples de responsabilidades e instruções úteis.
-- **Demonstração e colaboração - 10:** explicar escolhas, usar Git e registrar o que aprendeu.
+* Testes de interface de usuário  
+    
+    6. **Inicie o servidor de testes Storybook:**  
+        ```
+        npm run storybook
+        ```
 
-Conta mais uma solução correta e explicada do que uma arquitetura sofisticada. Veja também [docs/CONTRATO_API.md](docs/CONTRATO_API.md), [docs/MODELO_DE_DADOS.md](docs/MODELO_DE_DADOS.md) e [harness/EXEMPLOS.md](harness/EXEMPLOS.md).
+    7. **Abra no navegador o endereço localhost especificado no terminal.**  
+        Exemplo:  
+        ```
+        http://127.0.0.1:6006/
+        ```
+
+## Licença
+
+Projeto desenvolvido por Eduardo Ribeiro para a Cogmo Technology no âmbito do programa Bolsa Futuro Digital, realizado por parceria entre o Instituto Hardware Brasil e o Instituto Federal de Brasília.
+
+<img src="./img/hbr-logo.png" width="100" align="center"><img src="./img/ifb-test.webp" width="100" align="center"><img src="./img/cogmo-logo.png" width="100" align="center">

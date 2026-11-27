@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 1260 1400"
+   width="1260"
+   height="1400"
+   font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+   role="img"
+   aria-labelledby="t d"
+   version="1.1"
+   id="svg53"
+   sodipodi:docname="DDD-layers-diagram.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview53"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.59"
+     inkscape:cx="463.55932"
+     inkscape:cy="296.61017"
+     inkscape:window-width="1920"
+     inkscape:window-height="1029"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg53" />
+  <title
+     id="t">HydroCogmo - arquitetura em camadas</title>
+  <desc
+     id="d">Círculos concêntricos: Domain no centro, adaptadores de interface no anel intermediário e frameworks e drivers no anel externo. API à esquerda, Infra.Data à direita. As dependências apontam para dentro.</desc>
+  <defs
+     id="defs1">
+    <marker
+       id="arr"
+       viewBox="0 0 10 10"
+       refX="8"
+       refY="5"
+       markerWidth="9"
+       markerHeight="9"
+       orient="auto">
+      <path
+         d="M0,0 L10,5 L0,10 z"
+         fill="#1E3A5F"
+         id="path1" />
+    </marker>
+  </defs>
+  <rect
+     width="1260"
+     height="1400"
+     fill="#FAFAF7"
+     id="rect1" />
+  <text
+     x="30"
+     y="48"
+     font-size="24px"
+     font-weight="700"
+     fill="#1e3a5f"
+     id="text1"><tspan
+       sodipodi:role="line"
+       id="tspan3"
+       x="30"
+       y="48">HydroCogmo</tspan></text>
+  <text
+     x="30"
+     y="70"
+     font-size="13px"
+     fill="#55657a"
+     id="text2">Arquitetura em camadas da API de monitoramento hidrológico</text>
+  <path
+     d="M 630 100 A 600 600 0 0 0 630 1300 L 630 1100 A 400 400 0 0 1 630 300 Z"
+     fill="#EAF1FA"
+     id="path2" />
+  <path
+     d="M 630 100 A 600 600 0 0 1 630 1300 L 630 1100 A 400 400 0 0 0 630 300 Z"
+     fill="#FBF0DF"
+     id="path3" />
+  <path
+     d="M 630 300 A 400 400 0 0 0 630 1100 L 630 850 A 150 150 0 0 1 630 550 Z"
+     fill="#CFE0F3"
+     id="path4" />
+  <path
+     d="M 630 300 A 400 400 0 0 1 630 1100 L 630 850 A 150 150 0 0 0 630 550 Z"
+     fill="#F5DDB8"
+     id="path5" />
+  <circle
+     cx="630"
+     cy="700"
+     fill="#1E3A5F"
+     id="circle5"
+     r="150" />
+  <circle
+     cx="630"
+     cy="700"
+     r="600"
+     fill="none"
+     stroke="#FFFFFF"
+     stroke-width="4"
+     id="circle6" />
+  <circle
+     cx="630"
+     cy="700"
+     r="400"
+     fill="none"
+     stroke="#FFFFFF"
+     stroke-width="4"
+     id="circle7" />
+  <circle
+     cx="630"
+     cy="700"
+     r="150"
+     fill="none"
+     stroke="#FFFFFF"
+     stroke-width="4"
+     id="circle8" />
+  <line
+     x1="630"
+     y1="100"
+     x2="630"
+     y2="550"
+     stroke="#FFFFFF"
+     stroke-width="3"
+     id="line8" />
+  <line
+     x1="630"
+     y1="850"
+     x2="630"
+     y2="1300"
+     stroke="#FFFFFF"
+     stroke-width="3"
+     id="line9" />
+  <rect
+     x="505.0"
+     y="175"
+     width="250"
+     height="30"
+     rx="15"
+     fill="#FFFFFF"
+     stroke="#B8C4D3"
+     stroke-width="1.2"
+     id="rect9" />
+  <text
+     x="630"
+     y="194.5"
+     text-anchor="middle"
+     font-size="12.5"
+     font-weight="600"
+     letter-spacing="1.2"
+     fill="#44546A"
+     id="text9">FRAMEWORKS E DRIVERS</text>
+  <rect
+     x="535.0"
+     y="345"
+     width="190"
+     height="30"
+     rx="15"
+     fill="#FFFFFF"
+     stroke="#B8C4D3"
+     stroke-width="1.2"
+     id="rect10" />
+  <text
+     x="630"
+     y="364.5"
+     text-anchor="middle"
+     font-size="12.5"
+     font-weight="600"
+     letter-spacing="1.2"
+     fill="#44546A"
+     id="text10">ADAPTADORES</text>
+  <text
+     x="630"
+     y="614"
+     text-anchor="middle"
+     font-size="21"
+     font-weight="700"
+     fill="#FFFFFF"
+     id="text11">Domain</text>
+  <text
+     x="630"
+     y="634"
+     text-anchor="middle"
+     font-size="12.5"
+     fill="#BFD0E6"
+     id="text12">HydroCogmo.Domain</text>
+  <rect
+     x="555"
+     y="654"
+     width="150"
+     height="50"
+     rx="10"
+     fill="#FFFFFF"
+     stroke="none"
+     stroke-width="1.6"
+     id="rect12" />
+  <text
+     x="630.0"
+     y="677"
+     text-anchor="middle"
+     font-size="15.5"
+     font-weight="600"
+     fill="#1B2A3A"
+     id="text13">Station</text>
+  <text
+     x="630.0"
+     y="696"
+     text-anchor="middle"
+     font-size="12.5"
+     fill="#55657A"
+     id="text14">estação monitorada</text>
+  <rect
+     x="555"
+     y="712"
+     width="150"
+     height="50"
+     rx="10"
+     fill="#FFFFFF"
+     stroke="none"
+     stroke-width="1.6"
+     id="rect14" />
+  <text
+     x="630.0"
+     y="735"
+     text-anchor="middle"
+     font-size="15.5"
+     font-weight="600"
+     fill="#1B2A3A"
+     id="text15">Observation</text>
+  <text
+     x="630.0"
+     y="754"
+     text-anchor="middle"
+     font-size="12.5"
+     fill="#55657A"
+     id="text16">level · rain</text>
+  <text
+     x="365"
+     y="530"
+     text-anchor="middle"
+     font-size="20"
+     font-weight="700"
+     fill="#1E3A5F"
+     id="text17">API</text>
+  <text
+     x="365"
+     y="548"
+     text-anchor="middle"
+     font-size="12.5"
+     fill="#55657A"
+     id="text18">HydroCogmo.API</text>
+  <rect
+     x="262"
+     y="569"
+     width="210"
+     height="52"
+     rx="10"
+     fill="#FFFFFF"
+     stroke="#6F98C8"
+     stroke-width="1.6"
+     id="rect18" />
+  <text
+     x="367.0"
+     y="592"
+     text-anchor="middle"
+     font-size="15.5"
+     font-weight="600"
+     fill="#1B2A3A"
+     id="text19">MonitoringController</text>
+  <text
+     x="367.0"
+     y="611"
+     text-anchor="middle"
+     font-size="12.5"
+     fill="#55657A"
+     id="text20">orquestra a requisição</text>
+  <rect
+     x="262"
+     y="629"
+     width="210"
+     height="52"
+     rx="10"
+     fill="#FFFFFF"
+     stroke="#6F98C8"
+     stroke-width="1.6"
+     id="rect20" />
+  <text
+     x="367.0"
+     y="652"
+     text-anchor="middle"
+     font-size="15.5"
+     font-weight="600"
+     fill="#1B2A3A"
+     id="text21">MonitoringPresenter</text>
+  <text
+     x="367.0"
+     y="671"
+     text-anchor="middle"
+     font-size="12.5"
+     fill="#55657A"
+     id="text22">entidades → JSON</text>
+  <rect
+     x="262"
+     y="689"
+     width="210"
+     height="52"
+     rx="10"
+     fill="#FFFFFF"
+     stroke="#6F98C8"
+     stroke-width="1.6"
+     id="rect22" />
+  <text
+     x="367.0"
+     y="712"
+     text-anchor="middle"
+     font-size="15.5"
+     font-weight="600"
+     fill="#1B2A3A"
+     id="text23">seriesQuery</text>
+  <text
+     x="367.0"
+     y="731"
+     text-anchor="middle"
+     font-size="12.5"
+     fill="#55657A"
+     id="text24">valida metric e hours</text>
+  <rect
+     x="262"
+     y="749"
+     width="210"
+     height="52"
+     rx="10"
+     fill="#FFFFFF"
+     stroke="#6F98C8"
+     stroke-width="1.6"
+     id="rect24" />
+  <text
+     x="367.0"
+     y="772"
+     text-anchor="middle"
+     font-size="15.5"
+     font-weight="600"
+     fill="#1B2A3A"
+     id="text25">ApiError</text>
+  <text
+     x="367.0"
+     y="791"
+     text-anchor="middle"
+     font-size="12.5"
+     fill="#55657A"
+     id="text26">erro com status e código</text>
+  <text
+     x="895"
+     y="530"
+     text-anchor="middle"
+     font-size="20"
+     font-weight="700"
+     fill="#8A4F0E"
+     id="text27">Infra.Data</text>
+  <text
+     x="895"
+     y="548"
+     text-anchor="middle"
+     font-size="12.5"
+     fill="#55657A"
+     id="text28">HydroCogmo.Infra.Data</text>
+  <rect
+     x="787.90717"
+     y="650.69354"
+     width="210.18575"
+     height="78.612999"
+     rx="10.008844"
+     fill="#ffffff"
+     stroke="#d39a4f"
+     stroke-width="1.53234"
+     id="rect28" />
+  <text
+     x="893"
+     y="673"
+     text-anchor="middle"
+     font-size="15.5px"
+     font-weight="600"
+     fill="#1b2a3a"
+     id="text29">MonitoringRepository</text>
+  <text
+     x="893"
+     y="696"
+     text-anchor="middle"
+     font-size="12.5px"
+     fill="#55657a"
+     id="text30">consultas SQL</text>
+  <text
+     x="893"
+     y="712"
+     text-anchor="middle"
+     font-size="12.5px"
+     fill="#55657a"
+     id="text32">table rows→entity objects</text>
+  <rect
+     x="109"
+     y="434"
+     width="166"
+     height="52"
+     rx="10"
+     fill="#FFFFFF"
+     stroke="#6F98C8"
+     stroke-width="1.6"
+     id="rect32" />
+  <text
+     x="192.0"
+     y="457"
+     text-anchor="middle"
+     font-size="15.5"
+     font-weight="600"
+     fill="#1B2A3A"
+     id="text33">Express + cors</text>
+  <text
+     x="192.0"
+     y="476"
+     text-anchor="middle"
+     font-size="12.5"
+     fill="#55657A"
+     id="text34">servidor HTTP · CORS</text>
+  <rect
+     x="985"
+     y="434"
+     width="166"
+     height="52"
+     rx="10"
+     fill="#FFFFFF"
+     stroke="#D39A4F"
+     stroke-width="1.6"
+     id="rect34" />
+  <text
+     x="1068.0"
+     y="457"
+     text-anchor="middle"
+     font-size="15.5"
+     font-weight="600"
+     fill="#1B2A3A"
+     id="text35">better-sqlite3</text>
+  <text
+     x="1068.0"
+     y="476"
+     text-anchor="middle"
+     font-size="12.5"
+     fill="#55657A"
+     id="text36">driver síncrono</text>
+  <rect
+     x="58"
+     y="594"
+     width="166"
+     height="52"
+     rx="10"
+     fill="#FFFFFF"
+     stroke="#6F98C8"
+     stroke-width="1.6"
+     id="rect36" />
+  <text
+     x="141.0"
+     y="617"
+     text-anchor="middle"
+     font-size="15.5"
+     font-weight="600"
+     fill="#1B2A3A"
+     id="text37">app.js</text>
+  <text
+     x="141.0"
+     y="636"
+     text-anchor="middle"
+     font-size="12.5"
+     fill="#55657A"
+     id="text38">createApp()</text>
+  <rect
+     x="1036"
+     y="594"
+     width="166"
+     height="52"
+     rx="10"
+     fill="#FFFFFF"
+     stroke="#D39A4F"
+     stroke-width="1.6"
+     id="rect38" />
+  <text
+     x="1119.0"
+     y="617"
+     text-anchor="middle"
+     font-size="15.5"
+     font-weight="600"
+     fill="#1B2A3A"
+     id="text39">db.js</text>
+  <text
+     x="1119.0"
+     y="636"
+     text-anchor="middle"
+     font-size="12.5"
+     fill="#55657A"
+     id="text40">foreign_keys = ON</text>
+  <rect
+     x="58"
+     y="754"
+     width="166"
+     height="52"
+     rx="10"
+     fill="#FFFFFF"
+     stroke="#6F98C8"
+     stroke-width="1.6"
+     id="rect40" />
+  <text
+     x="141.0"
+     y="777"
+     text-anchor="middle"
+     font-size="15.5"
+     font-weight="600"
+     fill="#1B2A3A"
+     id="text41">routes.js</text>
+  <text
+     x="141.0"
+     y="796"
+     text-anchor="middle"
+     font-size="12.5"
+     fill="#55657A"
+     id="text42">createRoutes()</text>
+  <rect
+     x="1036"
+     y="754"
+     width="166"
+     height="52"
+     rx="10"
+     fill="#FFFFFF"
+     stroke="#D39A4F"
+     stroke-width="1.6"
+     id="rect42" />
+  <text
+     x="1119.0"
+     y="777"
+     text-anchor="middle"
+     font-size="15.5"
+     font-weight="600"
+     fill="#1B2A3A"
+     id="text43">schema.sql</text>
+  <text
+     x="1119.0"
+     y="796"
+     text-anchor="middle"
+     font-size="12.5"
+     fill="#55657A"
+     id="text44">tabelas e constraints</text>
+  <rect
+     x="109"
+     y="914"
+     width="166"
+     height="52"
+     rx="10"
+     fill="#FFFFFF"
+     stroke="#6F98C8"
+     stroke-width="1.6"
+     id="rect44" />
+  <text
+     x="192.0"
+     y="937"
+     text-anchor="middle"
+     font-size="15.5"
+     font-weight="600"
+     fill="#1B2A3A"
+     id="text45">errorHandler.js</text>
+  <text
+     x="192.0"
+     y="956"
+     text-anchor="middle"
+     font-size="12.5"
+     fill="#55657A"
+     id="text46">notFound · erros</text>
+  <rect
+     x="985"
+     y="914"
+     width="166"
+     height="52"
+     rx="10"
+     fill="#FFFFFF"
+     stroke="#D39A4F"
+     stroke-width="1.6"
+     id="rect46" />
+  <text
+     x="1068.0"
+     y="937"
+     text-anchor="middle"
+     font-size="15.5"
+     font-weight="600"
+     fill="#1B2A3A"
+     id="text47">SQLite</text>
+  <text
+     x="1068.0"
+     y="956"
+     text-anchor="middle"
+     font-size="12.5"
+     fill="#55657A"
+     id="text48">arquivo .sqlite</text>
+  <line
+     x1="630"
+     y1="1285"
+     x2="630"
+     y2="862"
+     stroke="#1E3A5F"
+     stroke-width="3"
+     marker-end="url(#arr)"
+     id="line48" />
+  <text
+     x="644.80908"
+     y="1202.7334"
+     font-size="14px"
+     font-style="italic"
+     fill="#33445a"
+     id="text49"
+     style="white-space:pre;inline-size:85.4957;display:inline"
+     transform="matrix(1.2606982,0,0,1.2606982,-170.01043,-313.409)"
+     xml:space="preserve"><tspan
+       x="644.80908"
+       y="1202.7334"
+       id="tspan2">Dependência</tspan></text>
+  <line
+     x1="630"
+     y1="80"
+     x2="630"
+     y2="100"
+     stroke="#1E3A5F"
+     stroke-width="2"
+     stroke-dasharray="5 4"
+     id="line50" />
+  <rect
+     x="440"
+     y="22"
+     width="380"
+     height="58"
+     rx="10"
+     fill="#F1F4F8"
+     stroke="#1E3A5F"
+     stroke-width="1.8"
+     id="rect50" />
+  <text
+     x="630"
+     y="46"
+     text-anchor="middle"
+     font-size="16.5"
+     font-weight="700"
+     fill="#1E3A5F"
+     id="text51">server.js · composition root</text>
+  <text
+     x="630"
+     y="65"
+     text-anchor="middle"
+     font-size="12.5px"
+     fill="#55657a"
+     id="text52">instancia e conecta as camadas</text>
+  <text
+     x="630"
+     y="1352"
+     text-anchor="middle"
+     font-size="14"
+     fill="#55657A"
+     id="text53">Domain não depende de nada. API e Infra.Data dependem apenas de Domain.</text>
+</svg>
